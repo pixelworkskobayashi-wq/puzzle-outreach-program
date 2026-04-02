@@ -1,0 +1,93 @@
+---
+---
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
+    <p class="hero-label fade-in">PUZZLE OUTREACH PROGRAM</p>
+    <h1 class="hero-title fade-in">
+      建築のプロが学校へ。<br />
+      子どもたちに空間を<br />
+      デザインする体験を。
+    </h1>
+    <p class="hero-sub fade-in">
+      北海道建築士会札幌支部による小中学校向け出前授業
+    </p>
+    <div class="hero-cta fade-in">
+      <a href="#apply" class="cta-primary">出前授業を申し込む →</a>
+      <a href="#program" class="cta-secondary">授業内容を見る</a>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80') center/cover no-repeat;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.3) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+.hero-label {
+  font-size: 10px;
+  letter-spacing: var(--letter-spacing-wider);
+  opacity: 0.8;
+  margin-bottom: 24px;
+}
+.hero-title {
+  font-size: clamp(28px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+.hero-sub {
+  font-size: clamp(13px, 1.5vw, 16px);
+  opacity: 0.85;
+  margin-bottom: 40px;
+  letter-spacing: 0.05em;
+}
+.hero-cta {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cta-primary {
+  font-size: 12px;
+  letter-spacing: var(--letter-spacing-wide);
+  text-decoration: none;
+  text-transform: uppercase;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 2px;
+  transition: opacity var(--transition-base);
+}
+.cta-primary:hover { opacity: 0.85; }
+.cta-secondary {
+  font-size: 11px;
+  letter-spacing: var(--letter-spacing-wide);
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  border-bottom: 1px solid rgba(255,255,255,0.6);
+  padding-bottom: 2px;
+  transition: border-color var(--transition-base);
+}
+.cta-secondary:hover { border-color: #fff; }
+</style>

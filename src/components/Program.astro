@@ -1,0 +1,112 @@
+---
+---
+<section class="program" id="program">
+  <div class="container">
+    <p class="section-label fade-in">PROGRAM</p>
+    <h2 class="program-heading fade-in">授業プログラム</h2>
+
+    <div class="program-detail fade-in">
+      <div class="program-main">
+        <h3 class="program-title">住まいをデザインしよう</h3>
+        <p class="program-subtitle">— 間取り作成アプリで学ぶ建築と暮らし —</p>
+        <p class="program-desc">
+          専用の間取り作成アプリを操作しながら、部屋の配置・広さ・動線を
+          自分で考えてオリジナルの住まいをデザインします。
+          建築士が設計の考え方をわかりやすく解説し、空間を「つくる」楽しさを体験します。
+        </p>
+
+        <dl class="program-specs">
+          <div class="spec-row">
+            <dt>対象</dt>
+            <dd>小学校・中学校（学年は相談可）</dd>
+          </div>
+          <div class="spec-row">
+            <dt>授業時間</dt>
+            <dd>45〜90分（学校のカリキュラムに合わせて調整可能）</dd>
+          </div>
+          <div class="spec-row">
+            <dt>定員</dt>
+            <dd>1クラス単位（約30〜40名）</dd>
+          </div>
+          <div class="spec-row">
+            <dt>費用</dt>
+            <dd>無料</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="program-notice">
+        <p class="notice-title">⚠ 実施にあたっての必須条件</p>
+        <p class="notice-text">
+          授業で使用するアプリはインターネット接続が必要です。
+          実施場所（教室・体育館など）に安定したWi-Fi環境が必須となります。
+          ネットワーク環境についてはお申し込み時にご記入ください。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.program { padding: 120px 0; }
+.program-heading {
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 700;
+  margin-bottom: 56px;
+}
+.program-title {
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.program-subtitle {
+  font-size: 13px;
+  color: var(--color-text-sub);
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+.program-desc {
+  font-size: 14px;
+  color: var(--color-text-sub);
+  line-height: 1.9;
+  max-width: 680px;
+  margin-bottom: 40px;
+}
+.program-specs {
+  display: flex;
+  flex-direction: column;
+  max-width: 560px;
+}
+.spec-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 13px;
+}
+.spec-row dt { color: var(--color-text-sub); }
+.spec-row dd { color: var(--color-text); }
+.program-notice {
+  background: #fff8f0;
+  border-left: 3px solid #e07b39;
+  padding: 24px 28px;
+  max-width: 680px;
+  border-radius: 0 4px 4px 0;
+  margin-top: 40px;
+}
+.notice-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #c0622a;
+}
+.notice-text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--color-text-sub);
+}
+@media (max-width: 640px) {
+  .spec-row { grid-template-columns: 1fr; gap: 4px; }
+}
+</style>
