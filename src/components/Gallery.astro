@@ -11,11 +11,10 @@ const photos = [
 ];
 ---
 
-<section class="gallery" id="gallery">
+<section class="gallery">
   <div class="container">
-    <p class="section-label fade-in">GALLERY</p>
     <div class="gallery-grid fade-in">
-      {photos.map((photo, i) => (
+      {photos.map((photo) => (
         <button class="gallery-thumb" data-src={photo.src} data-alt={photo.alt} aria-label={photo.alt}>
           <img src={photo.src} alt={photo.alt} loading="lazy" />
         </button>
@@ -25,20 +24,23 @@ const photos = [
 </section>
 
 <div id="gallery-modal" class="gallery-modal" aria-hidden="true">
-  <div class="gallery-backdrop" id="gallery-backdrop"></div>
   <img id="gallery-modal-img" src="" alt="" class="gallery-modal-img" />
 </div>
 
 <style>
-.gallery { padding: 80px 0; }
+.gallery {
+  padding: 0 0 100px;
+  background: #fff;
+}
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(4, 180px);
+  gap: 10px;
 }
 .gallery-thumb {
   display: block;
-  aspect-ratio: 1;
+  width: 180px;
+  height: 180px;
   overflow: hidden;
   border-radius: var(--radius-md);
   border: none;
@@ -48,7 +50,7 @@ const photos = [
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .gallery-thumb:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
   box-shadow: var(--shadow-md);
 }
 .gallery-thumb img {
@@ -58,7 +60,7 @@ const photos = [
   display: block;
   transition: transform 0.3s ease;
 }
-.gallery-thumb:hover img { transform: scale(1.05); }
+.gallery-thumb:hover img { transform: scale(1.06); }
 
 /* Modal */
 .gallery-modal {
@@ -68,45 +70,40 @@ const photos = [
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(255, 255, 255, 0.88);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 .gallery-modal.is-open {
   opacity: 1;
   pointer-events: all;
 }
-.gallery-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.88);
-  cursor: pointer;
-}
 .gallery-modal-img {
-  position: relative;
-  z-index: 1;
   max-width: 90vw;
   max-height: 88vh;
   object-fit: contain;
   border-radius: var(--radius-md);
-  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
   transform: scale(0.85);
   transition: transform 0.3s ease;
-  cursor: default;
 }
 .gallery-modal.is-open .gallery-modal-img {
   transform: scale(1);
 }
 
 @media (max-width: 768px) {
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .gallery-thumb { width: 100%; height: auto; aspect-ratio: 1; }
 }
 </style>
 
 <script>
   const modal = document.getElementById('gallery-modal')!;
   const modalImg = document.getElementById('gallery-modal-img') as HTMLImageElement;
-  const backdrop = document.getElementById('gallery-backdrop')!;
 
   function openModal(src: string, alt: string) {
     modalImg.src = src;
@@ -127,13 +124,11 @@ const photos = [
 
   document.querySelectorAll<HTMLButtonElement>('.gallery-thumb').forEach((btn) => {
     btn.addEventListener('click', () => {
-      const src = btn.dataset.src!;
-      const alt = btn.dataset.alt ?? '';
-      openModal(src, alt);
+      openModal(btn.dataset.src!, btn.dataset.alt ?? '');
     });
   });
 
-  backdrop.addEventListener('click', closeModal);
+  modal.addEventListener('click', closeModal);
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
