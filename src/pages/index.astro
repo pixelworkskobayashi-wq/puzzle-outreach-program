@@ -1,3 +1,23 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Program from '../components/Program.astro';
+import Results from '../components/Results.astro';
+import Apply from '../components/Apply.astro';
+import Footer from '../components/Footer.astro';
+import BackToTop from '../components/BackToTop.astro';
 ---
-<html lang="ja"><body><h1>OK</h1></body></html>
+<Layout>
+  <Header />
+  <main style="padding-top: var(--header-height);">
+    <Hero />
+    <About />
+    <Program />
+    <Results />
+    <Apply />
+  </main>
+  <Footer />
+  <BackToTop />
+</Layout>

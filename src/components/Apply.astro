@@ -1,0 +1,190 @@
+---
+---
+<section class="apply" id="apply">
+  <div class="container">
+    <p class="section-label fade-in">APPLY</p>
+    <h2 class="apply-heading fade-in">出前授業の申し込み</h2>
+    <p class="apply-lead fade-in">
+      下記フォームにご記入の上、送信してください。<br />
+      担当者より2営業日以内にご連絡いたします。
+    </p>
+
+    <div id="apply-wrap" class="fade-in">
+      <form id="apply-form" action="https://api.web3forms.com/submit" method="POST" class="apply-form">
+        <input type="hidden" name="access_key" value="4110fb94-6c7b-4fc4-9753-c58f6a3241aa" />
+        <input type="hidden" name="subject" value="【出前授業】お申し込みがありました" />
+        <input type="checkbox" name="botcheck" style="display:none;" />
+
+        <div class="form-row">
+          <label class="form-label" for="school">学校名 <span class="required">*</span></label>
+          <input id="school" type="text" name="school" required class="form-input" placeholder="〇〇市立〇〇小学校" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="name">担当者名 <span class="required">*</span></label>
+          <input id="name" type="text" name="name" required class="form-input" placeholder="山田 太郎" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="email">メールアドレス <span class="required">*</span></label>
+          <input id="email" type="email" name="email" required class="form-input" placeholder="your@email.com" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="tel">電話番号 <span class="required">*</span></label>
+          <input id="tel" type="tel" name="tel" required class="form-input" placeholder="011-000-0000" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="date1">希望日程 第1候補 <span class="required">*</span></label>
+          <input id="date1" type="date" name="date1" required class="form-input" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="date2">希望日程 第2候補 <span class="required">*</span></label>
+          <input id="date2" type="date" name="date2" required class="form-input" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="grade">対象学年 <span class="required">*</span></label>
+          <select id="grade" name="grade" required class="form-input form-select">
+            <option value="">選択してください</option>
+            <option value="小学校低学年（1〜2年）">小学校低学年（1〜2年）</option>
+            <option value="小学校中学年（3〜4年）">小学校中学年（3〜4年）</option>
+            <option value="小学校高学年（5〜6年）">小学校高学年（5〜6年）</option>
+            <option value="中学校（1年）">中学校（1年）</option>
+            <option value="中学校（2年）">中学校（2年）</option>
+            <option value="中学校（3年）">中学校（3年）</option>
+            <option value="複数学年">複数学年（備考欄に記載）</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="count">参加人数 <span class="required">*</span></label>
+          <input id="count" type="number" name="count" required min="1" class="form-input" placeholder="30" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="venue">実施場所 <span class="required">*</span></label>
+          <input id="venue" type="text" name="venue" required class="form-input" placeholder="例：各教室、体育館、多目的室" />
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="network">ネットワーク環境 <span class="required">*</span></label>
+          <input id="network" type="text" name="network" required class="form-input" placeholder="例：各教室にWi-Fi有り（学校LAN）" />
+          <p class="form-hint">アプリの動作にはインターネット接続が必須です。実施場所の通信環境をご記入ください。</p>
+        </div>
+        <div class="form-row">
+          <label class="form-label" for="notes">その他ご要望・備考</label>
+          <textarea id="notes" name="notes" rows="4" class="form-input form-textarea" placeholder="ご不明な点やご要望があればご記入ください。"></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="submit-btn">申し込みを送信する →</button>
+        </div>
+      </form>
+
+      <div id="apply-success" class="apply-success" style="display:none;">
+        <p class="success-title">お申し込みありがとうございます。</p>
+        <p class="success-body">担当者より2営業日以内にご連絡いたします。</p>
+        <a href="#hero" class="text-link" style="display:inline-block;margin-top:32px;">ページトップへ戻る →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.apply { padding: 120px 0; }
+.apply-heading {
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.apply-lead {
+  font-size: 14px;
+  color: var(--color-text-sub);
+  line-height: 1.9;
+  margin-bottom: 56px;
+}
+.apply-form { max-width: 640px; }
+.form-row { margin-bottom: 36px; }
+.form-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  color: var(--color-text-sub);
+  margin-bottom: 10px;
+}
+.required { color: var(--color-accent); }
+.form-input {
+  width: 100%;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: 10px 0;
+  font-size: 14px;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  outline: none;
+  transition: border-color var(--transition-base);
+}
+.form-input:focus { border-bottom-color: var(--color-text); }
+.form-select { cursor: pointer; }
+.form-textarea { resize: vertical; min-height: 100px; line-height: 1.7; }
+.form-hint { font-size: 11px; color: var(--color-text-sub); margin-top: 6px; }
+.form-submit { margin-top: 48px; }
+.submit-btn {
+  font-size: 12px;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  padding: 16px 36px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: opacity var(--transition-base);
+  font-family: var(--font-sans);
+}
+.submit-btn:hover { opacity: 0.85; }
+.submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.apply-success {
+  max-width: 640px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.apply-success.visible { opacity: 1; }
+.success-title {
+  font-size: clamp(16px, 2vw, 20px);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.success-body {
+  font-size: 14px;
+  color: var(--color-text-sub);
+  line-height: 1.9;
+}
+</style>
+
+<script>
+  const form = document.getElementById('apply-form') as HTMLFormElement;
+  const success = document.getElementById('apply-success')!;
+  const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]')!;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    btn.textContent = '送信中...';
+    btn.disabled = true;
+
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form),
+    });
+
+    if (res.ok) {
+      form.style.transition = 'opacity 0.4s ease';
+      form.style.opacity = '0';
+      setTimeout(() => {
+        form.style.display = 'none';
+        success.style.display = 'block';
+        requestAnimationFrame(() => success.classList.add('visible'));
+      }, 400);
+    } else {
+      btn.textContent = '申し込みを送信する →';
+      btn.disabled = false;
+      alert('送信に失敗しました。時間をおいて再度お試しください。');
+    }
+  });
+</script>
