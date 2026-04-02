@@ -47,19 +47,58 @@
       <div class="program-flow fade-in">
         <p class="flow-title">授業の流れ（2コマ＋中休みの例）</p>
         <div class="flow-grid">
-          <div class="flow-item">
-            <span class="flow-tag">前半 45分</span>
-            <p>住まいの役割・建築計画の基礎知識を座学で学ぶ。その後WEBアプリで間取り作成スタート。</p>
+          <div class="flow-block">
+            <p class="flow-block-label">3時限目（45分）</p>
+            <div class="flow-rows">
+              <div class="flow-row">
+                <span class="flow-time">05分</span>
+                <div>
+                  <p class="flow-item-title">住まいの役割</p>
+                  <p class="flow-item-desc">住まいの役割・建築士の役割について</p>
+                </div>
+              </div>
+              <div class="flow-row">
+                <span class="flow-time">05分</span>
+                <div>
+                  <p class="flow-item-title">建築計画の基礎知識</p>
+                  <p class="flow-item-desc">住まいに必要な機能について</p>
+                </div>
+              </div>
+              <div class="flow-row">
+                <span class="flow-time">35分</span>
+                <div>
+                  <p class="flow-item-title">WEBパズルでお家の計画にチャレンジ！</p>
+                  <p class="flow-item-desc">課題内容の把握〜プランの作成</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="flow-item">
-            <span class="flow-tag">中休み 5分</span>
-            <p>トイレ休憩（引き続きプラン作成も可）</p>
+
+          <div class="flow-block flow-block--break">
+            <p class="flow-block-label">中休み（5分）</p>
+            <p class="flow-item-desc">トイレ休憩（引き続きプラン作成も可）</p>
           </div>
-          <div class="flow-item">
-            <span class="flow-tag">後半 45分</span>
-            <p>間取りを完成させ、選抜された作品を発表。建築士からの講評でまとめ。</p>
+
+          <div class="flow-block">
+            <p class="flow-block-label">4時限目（45分）</p>
+            <div class="flow-rows">
+              <div class="flow-row">
+                <span class="flow-time">20分</span>
+                <div>
+                  <p class="flow-item-title">プランの作成</p>
+                </div>
+              </div>
+              <div class="flow-row">
+                <span class="flow-time">25分</span>
+                <div>
+                  <p class="flow-item-title">解答例の説明・作品講評・まとめ</p>
+                  <p class="flow-item-desc">選抜された作品を発表し、建築士が講評</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <p class="flow-note">※ 学年や当日の進行状況により、各時間配分は変動することがあります。</p>
       </div>
 
       <div class="program-videos fade-in">
@@ -158,32 +197,73 @@
 .flow-title {
   font-size: 13px;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   color: var(--color-text);
 }
 .flow-grid {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 4px;
 }
-.flow-item {
+.flow-block {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+.flow-block--break {
+  background: #f8f8f8;
+  padding: 12px 16px;
+}
+.flow-block-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--color-accent);
+  padding: 6px 16px;
+  letter-spacing: 0.05em;
+}
+.flow-block--break .flow-block-label {
+  background: #ccc;
+  color: #fff;
+  margin: -12px -16px 10px;
+  padding: 6px 16px;
+}
+.flow-rows {
+  padding: 4px 0;
+}
+.flow-row {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  font-size: 13px;
-  color: var(--color-text-sub);
-  line-height: 1.7;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-border);
 }
-.flow-tag {
+.flow-row:last-child { border-bottom: none; }
+.flow-time {
   flex-shrink: 0;
-  background: var(--color-accent-light);
-  color: var(--color-accent);
   font-size: 11px;
   font-weight: 700;
-  padding: 3px 10px;
-  border-radius: 12px;
-  white-space: nowrap;
+  color: var(--color-accent);
+  background: var(--color-accent-light);
+  padding: 2px 8px;
+  border-radius: 10px;
   margin-top: 2px;
+}
+.flow-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+.flow-item-desc {
+  font-size: 12px;
+  color: var(--color-text-sub);
+  line-height: 1.6;
+}
+.flow-note {
+  font-size: 11px;
+  color: var(--color-text-sub);
+  margin-top: 12px;
 }
 .program-videos {
   max-width: 680px;
