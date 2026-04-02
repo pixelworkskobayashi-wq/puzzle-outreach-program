@@ -4,7 +4,15 @@
   --color-text: #1a1a1a;
   --color-text-sub: #888888;
   --color-border: #eeeeee;
-  --color-accent: #2e7d5e; /* 1行変更で全体に反映 */
+  --color-accent: #e8763a;
+  --color-accent-light: #fef0e8;
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 20px rgba(0,0,0,0.10);
 
   --font-sans: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
   --letter-spacing-wide: 0.15em;
@@ -43,11 +51,15 @@ img {
 
 /* Utility */
 .section-label {
+  display: inline-block;
   font-size: 10px;
   letter-spacing: var(--letter-spacing-wider);
-  color: var(--color-text-sub);
+  color: var(--color-accent);
+  background: var(--color-accent-light);
   text-transform: uppercase;
   margin-bottom: 24px;
+  padding: 4px 14px;
+  border-radius: 20px;
 }
 
 .text-link {
