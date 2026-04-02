@@ -15,6 +15,18 @@ import { stats, testimonials } from '../data/results';
       ))}
     </div>
 
+    <div class="schools fade-in">
+      <p class="section-label">SCHOOLS</p>
+      <ul class="schools-list">
+        <li>札幌市立東園小学校</li>
+        <li>千歳市立千歳小学校</li>
+        <li>室蘭市立天神小学校</li>
+        <li>北見市立中央小学校</li>
+        <li>ミニさっぽろ 建設ゾーン「建築設計」ブース（毎年）</li>
+        <li>その他、全国各地のイベントで実施</li>
+      </ul>
+    </div>
+
     <div class="testimonials fade-in">
       <p class="section-label">VOICE</p>
       <div class="testimonials-grid">
@@ -63,6 +75,21 @@ import { stats, testimonials } from '../data/results';
   font-size: 12px;
   color: var(--color-text-sub);
   letter-spacing: 0.05em;
+}
+.schools { margin-bottom: 64px; }
+.schools-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.schools-list li {
+  font-size: 12px;
+  color: var(--color-text-sub);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  padding: 6px 14px;
+  border-radius: 20px;
 }
 .testimonials { margin-top: 0; }
 .testimonials-grid {

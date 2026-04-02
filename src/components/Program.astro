@@ -19,15 +19,19 @@
         <dl class="program-specs">
           <div class="spec-row">
             <dt>対象</dt>
-            <dd>小学4〜6年生・中学1〜3年生（学年は相談可）</dd>
+            <dd>小学5・6年生（4年生も可）・中学生（学年は相談可）</dd>
+          </div>
+          <div class="spec-row">
+            <dt>科目</dt>
+            <dd>総合（家庭科との連携も可）</dd>
           </div>
           <div class="spec-row">
             <dt>授業時間</dt>
-            <dd>45〜90分（2コマ90分を推奨）</dd>
+            <dd>2コマ＋中休み（約95分）を推奨</dd>
           </div>
           <div class="spec-row">
             <dt>定員</dt>
-            <dd>1クラス単位（約30〜40名）</dd>
+            <dd>1クラス単位</dd>
           </div>
           <div class="spec-row">
             <dt>費用</dt>
@@ -35,9 +39,37 @@
           </div>
           <div class="spec-row">
             <dt>使用アプリ</dt>
-            <dd><a href="https://h-ab.com/sapporo/puzzle/" target="_blank" rel="noopener" class="app-link">パズルで住まいを考えよう！（WEBアプリ）↗</a></dd>
+            <dd><a href="https://h-ab.com/sapporo/puzzle2024/" target="_blank" rel="noopener" class="app-link">パズルで住まいを考えよう！（WEBアプリ）↗</a></dd>
           </div>
         </dl>
+      </div>
+
+      <div class="program-flow fade-in">
+        <p class="flow-title">授業の流れ（2コマ＋中休みの例）</p>
+        <div class="flow-grid">
+          <div class="flow-item">
+            <span class="flow-tag">前半 45分</span>
+            <p>住まいの役割・建築計画の基礎知識を座学で学ぶ。その後WEBアプリで間取り作成スタート。</p>
+          </div>
+          <div class="flow-item">
+            <span class="flow-tag">中休み 5分</span>
+            <p>トイレ休憩（引き続きプラン作成も可）</p>
+          </div>
+          <div class="flow-item">
+            <span class="flow-tag">後半 45分</span>
+            <p>間取りを完成させ、選抜された作品を発表。建築士からの講評でまとめ。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="program-videos fade-in">
+        <p class="videos-title">📹 授業の様子・アプリ操作方法（YouTube）</p>
+        <ul class="videos-list">
+          <li><a href="https://youtu.be/nvGm7RvMVPE" target="_blank" rel="noopener">座学編</a></li>
+          <li><a href="https://youtu.be/235VYNfR-Zw" target="_blank" rel="noopener">敷地環境・アプリ操作方法編</a></li>
+          <li><a href="https://youtu.be/VgfMb-OEN-Q" target="_blank" rel="noopener">間取り作成・発表編</a></li>
+          <li><a href="https://youtu.be/7J-NE9dJntU" target="_blank" rel="noopener">建築士の解答まとめ編</a></li>
+        </ul>
       </div>
 
       <div class="program-notice">
@@ -119,7 +151,68 @@
   line-height: 1.8;
   color: var(--color-text-sub);
 }
+.program-flow {
+  max-width: 680px;
+  margin-top: 48px;
+}
+.flow-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--color-text);
+}
+.flow-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.flow-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--color-text-sub);
+  line-height: 1.7;
+}
+.flow-tag {
+  flex-shrink: 0;
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+.program-videos {
+  max-width: 680px;
+  margin-top: 40px;
+  padding: 24px 28px;
+  background: #f8f8f8;
+  border-radius: var(--radius-sm);
+}
+.videos-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--color-text);
+}
+.videos-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+.videos-list a {
+  font-size: 12px;
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.videos-list a::before { content: '▶ '; }
+.videos-list a:hover { text-decoration: underline; }
 @media (max-width: 640px) {
   .spec-row { grid-template-columns: 1fr; gap: 4px; }
+  .flow-item { flex-direction: column; gap: 6px; }
 }
 </style>

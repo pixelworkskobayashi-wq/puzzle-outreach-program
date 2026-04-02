@@ -1,33 +1,59 @@
 ---
 ---
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <span class="footer-org">北海道建築士会 札幌支部</span>
-    <span class="footer-copy">© 2026 Hokkaido Architects Association Sapporo Branch. All rights reserved.</span>
+  <div class="container">
+    <div class="footer-body">
+      <div class="footer-org-block">
+        <p class="footer-org">一般社団法人 北海道建築士会 札幌支部</p>
+        <p class="footer-address">〒060-0042 札幌市中央区大通西5丁目11番地 大五ビル6F（一社）北海道建築士会内</p>
+        <p class="footer-contact">TEL: 011-232-1843 ／ FAX: 011-222-0924 ／ <a href="mailto:hksj@h-ab.com">hksj@h-ab.com</a></p>
+      </div>
+      <p class="footer-copy">© 2026 Hokkaido Architects Association Sapporo Branch.</p>
+    </div>
   </div>
 </footer>
 
 <style>
 .site-footer {
-  padding: 32px 0;
+  padding: 48px 0 32px;
   border-top: 1px solid var(--color-border);
+  background: #fafafa;
 }
-.footer-inner {
+.footer-body {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: 16px;
+  gap: 24px;
   flex-wrap: wrap;
 }
 .footer-org {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.05em;
+  font-size: 13px;
+  font-weight: 700;
   color: var(--color-text);
+  margin-bottom: 8px;
 }
-.footer-copy {
+.footer-address {
   font-size: 11px;
   color: var(--color-text-sub);
+  line-height: 1.7;
+  margin-bottom: 4px;
+}
+.footer-contact {
+  font-size: 11px;
+  color: var(--color-text-sub);
+}
+.footer-contact a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.footer-contact a:hover { text-decoration: underline; }
+.footer-copy {
+  font-size: 10px;
+  color: var(--color-text-sub);
   letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .footer-body { flex-direction: column; align-items: flex-start; }
 }
 </style>
