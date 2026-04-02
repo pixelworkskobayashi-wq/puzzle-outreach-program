@@ -88,6 +88,11 @@ img {
   transform: translateY(0);
 }
 
+/* Center alignment for all sections below hero */
+section:not(#hero), .site-footer {
+  text-align: center;
+}
+
 /* Container */
 .container {
   max-width: 1200px;
