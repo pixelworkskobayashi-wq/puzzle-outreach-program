@@ -53,7 +53,7 @@ img {
 /* Utility */
 .section-label {
   display: inline-block;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: var(--letter-spacing-wider);
   color: var(--color-accent);
   background: var(--color-accent-light);
