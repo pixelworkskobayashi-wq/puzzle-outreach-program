@@ -1,0 +1,153 @@
+---
+const photos = [
+  { src: '/images/example/ex01.png', alt: '専用アプリ画面1' },
+  { src: '/images/example/ex02.png', alt: '専用アプリ画面2' },
+  { src: '/images/example/ex03.png', alt: '専用アプリ画面3' },
+  { src: '/images/example/ex04.png', alt: '専用アプリ画面4' },
+];
+---
+<section class="example" id="example">
+  <div class="container">
+    <p class="section-label fade-in">EXAMPLE</p>
+    <div class="example-inner fade-in">
+      <h2 class="example-title">専用アプリ</h2>
+      <p class="example-text">
+        専用アプリは座学の内容と連動しています。屋内のパブリックとプライベート、水回り、家事、収納廊下とゾーン毎にパーツを分け、直観的な操作で簡単に間取り作成ができます。
+      </p>
+      <div class="example-grid">
+        {photos.map((photo) => (
+          <button class="example-thumb" data-src={photo.src} data-alt={photo.alt} aria-label={photo.alt}>
+            <img src={photo.src} alt={photo.alt} loading="lazy" />
+          </button>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="example-modal" class="example-modal" aria-hidden="true">
+  <img id="example-modal-img" src="" alt="" class="example-modal-img" />
+</div>
+
+<style>
+.example {
+  padding: 120px 0;
+  background: #fff;
+}
+.example-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.example-title {
+  font-size: clamp(20px, 3vw, 30px);
+  font-weight: 700;
+  margin-bottom: 28px;
+}
+.example-text {
+  font-size: 15px;
+  color: var(--color-text-sub);
+  line-height: 2;
+  margin-bottom: 40px;
+}
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 180px);
+  gap: 10px;
+  justify-content: center;
+}
+.example-thumb {
+  display: block;
+  width: 180px;
+  height: 180px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: var(--color-border);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.example-thumb:hover {
+  transform: scale(1.04);
+  box-shadow: var(--shadow-md);
+}
+.example-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.example-thumb:hover img { transform: scale(1.06); }
+
+/* Modal */
+.example-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.88);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+.example-modal.is-open {
+  opacity: 1;
+  pointer-events: all;
+}
+.example-modal-img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  transform: scale(0.85);
+  transition: transform 0.3s ease;
+}
+.example-modal.is-open .example-modal-img {
+  transform: scale(1);
+}
+
+@media (max-width: 768px) {
+  .example-grid { grid-template-columns: repeat(4, 1fr); }
+  .example-thumb { width: 100%; height: auto; aspect-ratio: 1; }
+}
+</style>
+
+<script>
+  const modal = document.getElementById('example-modal')!;
+  const modalImg = document.getElementById('example-modal-img') as HTMLImageElement;
+
+  function openModal(src: string, alt: string) {
+    modalImg.src = src;
+    modalImg.alt = alt;
+    modal.setAttribute('aria-hidden', 'false');
+    requestAnimationFrame(() => modal.classList.add('is-open'));
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+    modal.addEventListener('transitionend', () => {
+      modalImg.src = '';
+      modal.setAttribute('aria-hidden', 'true');
+    }, { once: true });
+  }
+
+  document.querySelectorAll<HTMLButtonElement>('.example-thumb').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      openModal(btn.dataset.src!, btn.dataset.alt ?? '');
+    });
+  });
+
+  modal.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>
